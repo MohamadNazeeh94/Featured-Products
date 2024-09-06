@@ -1,0 +1,22 @@
+{% if products %}
+    <div class="featured-products">
+        {% if module_featured_products_title %}
+            <h2>{{ module_featured_products_title }}</h2>
+        {% endif %}
+        <div class="row">
+            {% for product in products %}
+                <div class="col-sm-3">
+                    <div class="product-thumb">
+                        <div class="image">
+                            <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-responsive" /></a>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                            <p>{{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
